@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <title>Testing</title>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    </head>
+    <body>
+    <div id="app">
+    <h1>{{getName()}}</h1>
+    <h1>{{name}}</h1>
+    <a v-bind:href='website'>My website</a>
+    <h5>My name is {{age}}</h5>
+    <button v-on:click.prevent="increaseAge()"> Incresse Age</button>
+
+    <input type="text" v-on:keyup="showalert()"></input>
+    <div >
+        <div  v-for="list in filteredData"  >
+            <h3>{{list.name}}</h3>
+            
+        </div>
+    </div>
+        
+  
+        <button @click="quantityToload += 2" >Load More</button>
+    <button @click="quantityToload -= 2" >Load Less</button>
+   <div>
+       <h3>Implementing Custom Search</h3>
+       <table>
+           <thead>
+            <tr>
+               <th>Name</th>
+               <th>Age</th>
+            </tr>
+           </thead>
+           <tr>
+            <td><input v-model="namesearch" name="" type="text" placeholder="seach name"/></td>
+            <td><input v-model="descriptionsearch" name="" type="text" placeholder="seach desc"/></td>
+          </tr>  
+            <tr v-for="list in filteredData">
+                <td>{{list.name}}</td>
+                <td>{{list.description}}</td>
+            </tr>
+         
+           <tbody>
+              
+           </tbody>
+           <tfoot>
+
+           </tfoot>
+           
+       </table>
+
+   </div>
+</div>
+    <script src="app.js"></script>
+       
+    </body>
+</html>
